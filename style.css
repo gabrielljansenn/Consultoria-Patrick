@@ -44,7 +44,7 @@ input[type="radio"], input[type="checkbox"] {
     accent-color: #ccd595;
 }
 
-input[type="text"], input [type="passoword"], input[type="date"], input[type+"email"] {
+input[type="text"], input[type="passoword"], input[type="date"], input[type+"email"] {
     width: 100%;
     padding: 0.6rem;
     border: 2px solid #798252;
