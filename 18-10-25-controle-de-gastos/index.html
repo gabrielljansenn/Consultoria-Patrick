@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Gastos com Combustível</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="lux-header">
+    <h1>🚗 Controle de Gastos de Viagem</h1>
+    <button id="toggle-theme" title="Alternar tema">🌙</button>
+  </header>
+
+  <main class="container">
+    <div class="glass-card">
+      <div class="form-group">
+        <label>Distância (km):</label>
+        <input type="number" id="distancia" placeholder="Ex: 150">
+      </div>
+
+      <div class="form-group">
+        <label>Consumo médio (km/l):</label>
+        <input type="number" id="consumo" placeholder="Ex: 12">
+      </div>
+
+      <div class="form-group">
+        <label>Preço do combustível (R$/litro):</label>
+        <input type="number" id="preco" step="0.01" placeholder="Ex: 5.79">
+      </div>
+
+      <button id="calcular">Calcular</button>
+
+      <div id="resultado" class="resultado"></div>
+
+      <div class="grafico-container">
+        <canvas id="graficoGastos"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Feito com 💚💛💙 por <strong>Gabriel Jansen</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Desafio 30 Dias — Equilíbrio e Propósito</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Desafio 30 Dias — Equilíbrio e Propósito</h1>
+        <p>Educação Financeira • Tempo com Deus • Alimentação • Academia</p>
+        <button id="toggle-theme">🌙 Mudar Tema</button>
+    </header>
+
+    <main>
+        <section id="finance">
+            <h2>💰 Educação Financeira</h2>
+            <div class="finance-input-group">
+                <label for="budget">Orçamento (R$):</label>
+                <input type="number" id="budget" placeholder="0.00" value="0.00" min="0">
+            </div>
+            
+            <div id="finance-summary" class="finance-summary-box">
+                <p>Orçamento Restante: <span id="remaining-budget" class="value">R$ 0,00</span></p>
+                <p>Total Gasto: <span id="total-spent" class="value spent">R$ 0,00</span></p>
+                <p>Gastos Essenciais: <span id="essential-spent" class="value">R$ 0,00</span></p>
+            </div>
+
+            <div class="finance-actions">
+                <button id="add-expense" class="add-button">➕ Adicionar Gasto</button>
+                <button id="export-all-data" class="save-button">📥 Exportar TODOS os Dados</button>
+            </div>
+
+            <table aria-label="Tabela de Gastos Financeiros">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor (R$)</th>
+                        <th>Necessário?</th>
+                        <th>Observação / Reflexão</th> 
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+        </section>
+
+        <section id="faith">
+            <h2>📖 Tempo com Deus</h2>
+            <div class="faith-controls">
+                <label for="bible-book">Livro lido hoje:</label>
+                <select id="bible-book" class="select-book"></select>
+
+                <label for="bible-chapter">Capítulo/Versículo:</label>
+                <input type="text" id="bible-chapter" placeholder="Ex: 5:1-12">
+            </div>
+            
+            <textarea id="reflection" placeholder="Anote sua reflexão sobre a leitura, o que Deus falou com você..."></textarea>
+            <button id="save-reflection" class="save-button">Salvar Leitura e Reflexão</button>
+        </section>
+
+        <section id="health">
+            <h2>💪 Treino e Alimentação</h2>
+            <ul class="health-goals">
+                <li>✅ Treinar 5x por semana <button id="view-workout" class="info-button">Ver Série</button></li>
+                <li>🏃‍♂️ Cardio mínimo: 35min moderado</li>
+                <li>🥗 1 refeição livre por semana <button id="view-cheat-meal-tips" class="info-button">Dicas Saudáveis</button></li>
+                <li>💧 Beber 2,5L de água por dia</li>
+            </ul>
+            
+            <h3>🍽️ Refeição Diária</h3>
+            <button id="view-daily-diet" class="info-button">Sua Dieta e Horários</button>
+
+            <h3>💧 Acompanhamento de Água</h3>
+            <label for="water">Água hoje (litros):</label>
+            <input type="number" id="water" min="0" max="5" step="0.1" placeholder="0.0">
+            
+            <button id="save-health" class="save-button">Salvar Progresso</button>
+            <p id="health-progress"></p>
+        </section>
+
+        <section id="evolution">
+            <h2>📸 Acompanhe sua Evolução</h2>
+            <p>Use esta seção para adicionar fotos e acompanhar sua jornada de 30 dias (Fotos não são salvas entre sessões).</p>
+            <input type="file" id="photo-upload" accept="image/*" multiple>
+            <div id="photo-gallery" class="photo-grid">
+                </div>
+        </section>
+
+        <section id="progress">
+            <h2>📅 Progresso Diário</h2>
+            <table aria-label="Tabela de Progresso Diário do Desafio">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Finanças</th>
+                        <th>Deus</th>
+                        <th>Treino</th>
+                        <th>Alimentação</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody id="daily-progress"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <button id="reset-data" class="reset-button">🔁 Reiniciar Desafio</button>
+        <p>Desenvolvido para crescimento pessoal e equilíbrio — 2025</p>
+    </footer>
+
+    <div id="workout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Treino Sugerido (ABC 2x, foco perna) - 5x/semana (1h20min)</h3>
+            
+            <h4>A – Peito, Ombro e Tríceps</h4>
+            <ul>
+                <li>Supino reto barra – 4x6-8</li>
+                <li>Supino inclinado halter – 3x8-10</li>
+                <li>Crucifixo máquina/cabo – 3x10-12</li>
+                <li>Desenvolvimento militar barra – 4x6-8</li>
+                <li>Elevação lateral halter – 3x12-15</li>
+                <li>Tríceps corda – 3x10-12</li>
+                <li>Tríceps francês – 3x10-12</li>
+            </ul>
+
+            <h4>B – Costas e Bíceps</h4>
+            <ul>
+                <li>Barra fixa (se não der, puxada alta) – 4x6-8</li>
+                <li>Remada curvada barra – 4x6-8</li>
+                <li>Remada unilateral halter – 3x8-10</li>
+                <li>Pulldown na polia – 3x10-12</li>
+                <li>Rosca direta barra – 4x8-10</li>
+                <li>Rosca alternada halter – 3x10-12</li>
+                <li>Facepull – 3x12-15</li>
+            </ul>
+
+            <h4>C – Pernas e Abdômen</h4>
+            <ul>
+                <li>Agachamento libre – 4x6-8</li>
+                <li>Leg press 45° – 4x10-12</li>
+                <li>Avanço (passada) – 3x10 cada perna</li>
+                <li>Cadeira extensora (drop set) – 3x até falha</li>
+                <li>Mesa flexora – 4x10-12</li>
+                <li>Stiff halter/barra – 4x8-10</li>
+                <li>Panturrilha em pé – 5x15-20</li>
+                <li>Abdômen infra + prancha – 4 séries</li>
+            </ul>
+            <p><strong>➡️ Ordem da semana:</strong> A – B – C – A – C</p>
+        </div>
+    </div>
+    
+    <div id="cheat-meal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Dicas de Alimentação: Refeição Livre e Opções Saudáveis</h3>
+            <p>A chave para uma alimentação equilibrada e duradoura é a moderação, não a privação. A "Refeição Livre" é uma estratégia importante...</p>
+            
+            <h4>Refeição Livre: Desfrute com Equilíbrio e Consciência</h4>
+            <ul>
+                <li>Planejamento é a Chave: Defina uma refeição específica na semana.</li>
+                <li>Foco no Desejo: Gaste sua refeição livre com algo que você realmente ama.</li>
+                <li>Qualidade Acima da Quantidade.</li>
+                <li>Controle os Extras: Evite a "explosão calórica".</li>
+                <li>Sem Culpa.</li>
+            </ul>
+
+            <h4>Ideias para Manter o Foco: Doces e Salgados Saudáveis (FIT)</h4>
+            <h5>1. Doces Saudáveis</h5>
+            <p>Mousse de chocolate fit, Sorvete de banana, Pudim de chia, Bolo de caneca fit, etc.</p>
+            
+            <h5>2. Salgados Saudáveis</h5>
+            <p>Crepioca salgada, Pão de queijo fit de tapioca, Torta rápida de frango low carb, etc.</p>
+        </div>
+    </div>
+    
+    <div id="daily-diet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Sua Dieta Completa e Horários de Refeições</h3>
+            <p>Neste espaço, você pode adicionar sua dieta personalizada com horários definidos.</p>
+            
+            <table class="diet-table">
+                <thead>
+                    <tr><th>Horário</th><th>Refeição</th><th>Itens</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>7:00</td><td>Café da Manhã</td><td>Omelete (2 ovos) e 1 fatia de pão integral</td></tr>
+                    <tr><td>10:00</td><td>Lanche Manhã</td><td>Maçã e 10 amêndoas</td></tr>
+                    <tr><td>13:00</td><td>Almoço</td><td>Arroz integral, Feijão, Frango grelhado e Salada à vontade</td></tr>
+                    <tr><td>16:00</td><td>Lanche Tarde</td><td>Iogurte natural com granola</td></tr>
+                    <tr><td>19:00</td><td>Jantar</td><td>Sopa de legumes com carne magra</td></tr>
+                    <tr><td>21:00</td><td>Ceia</td><td>Chá e 1 castanha do pará</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

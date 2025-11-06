@@ -1,0 +1,432 @@
+:root {
+    --bg: #f5f7fa;
+    --text: #222;
+    --accent: #007b5f;
+    --card: #fff;
+    --shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+    --bg: #1a1a1a;
+    --text: #f1f1f1;
+    --accent: #3ddc84;
+    --card: #2c2c2c;
+    --shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Base */
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    background: var(--card);
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: background 0.3s;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+h2 {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Botões */
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+.finance-actions {
+    display: flex;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.add-button {
+    padding: 0.7rem 1.5rem;
+}
+
+.save-button {
+    margin-top: 0.5rem; 
+}
+
+.reset-button {
+    background: #d9534f; 
+}
+
+.reset-button:hover {
+    background: #c9302c;
+}
+
+.info-button {
+    background: none;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    transition: all 0.2s;
+}
+
+.info-button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Formulário e Inputs FORA da Tabela */
+textarea, input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.finance-input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Tempo com Deus - Layout dos novos campos */
+#faith .faith-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+#faith label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+#faith input#bible-chapter {
+    /* Ajuste específico para este input, mantendo o estilo global */
+    width: 100%;
+    margin-top: 0; 
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    table-layout: fixed;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.6rem 0.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+thead th {
+    background: var(--accent);
+    color: white;
+}
+
+/* Ajuste para inputs e selects DENTRO da tabela de gastos (para desktop) */
+#expense-list input[type="text"],
+#expense-list input[type="number"],
+#expense-list select {
+    width: 90%; 
+    padding: 0.3rem; 
+    margin: 0.2rem auto; 
+    display: block; 
+    box-sizing: border-box; 
+    font-size: 0.9rem; 
+}
+
+
+/* Finanças - Resumo */
+.finance-summary-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 1rem;
+    background: var(--bg);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.finance-summary-box p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+
+.finance-summary-box .value {
+    display: block;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 0.2rem;
+}
+
+.finance-summary-box .spent {
+    color: #d9534f; 
+}
+
+/* --- ESTILOS GERAIS PARA SAÚDE E PROGRESSO --- */
+.health-goals {
+    list-style: none;
+    padding: 0;
+}
+
+.health-goals li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* --- MODAIS --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); 
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: var(--card);
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.diet-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+.diet-table th, .diet-table td {
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.photo-item {
+    width: 100%;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 2rem;
+}
+
+
+/* ========================================= */
+/* === AJUSTES RESPONSIVOS PARA MOBILE === */
+/* ========================================= */
+
+@media (max-width: 600px) {
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste para o layout dos controles do Tempo com Deus */
+    #faith .faith-controls {
+        grid-template-columns: 1fr; /* Coloca os campos em uma única coluna */
+    }
+
+    /* Ajuste do Resumo Financeiro */
+    .finance-summary-box {
+        flex-direction: column; /* Empilha o resumo financeiro verticalmente */
+        gap: 5px;
+        padding: 0.8rem;
+    }
+    .finance-summary-box p {
+        text-align: left;
+        border-bottom: 1px dashed #ccc3;
+        padding-bottom: 5px;
+    }
+    .finance-summary-box p:last-child {
+        border-bottom: none;
+    }
+
+    #toggle-theme {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* === A CHAVE: Transformação GENÉRICA das Tabelas (Finanças e Progresso) === */
+    
+    table {
+        border: 0;
+        table-layout: auto; 
+    }
+
+    table thead {
+        /* Esconde o cabeçalho da tabela no mobile */
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border: 1px solid #ddd;
+        display: block;
+        margin-bottom: 0.8rem;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+    }
+
+    table td {
+        /* Cada célula vira um bloco em uma linha própria */
+        border-bottom: 1px solid #eee;
+        display: block;
+        text-align: right;
+        padding: 0.5rem 0.3rem;
+        font-size: 0.85rem;
+    }
+
+    table td::before {
+        /* Usa o atributo data-label para exibir o nome da coluna */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+        text-align: center;
+    }
+
+    /* Ajusta inputs e selects de Finanças para preencher a largura do bloco TD */
+    #expense-list input[type="text"],
+    #expense-list input[type="number"],
+    #expense-list select {
+        width: 100%; 
+        display: inline-block; 
+        text-align: right;
+        padding: 0.4rem;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Ajuste específico para os checkboxes do Progresso */
+    #daily-progress .check {
+        /* Faz o checkbox ser maior e mais fácil de clicar */
+        transform: scale(1.5); 
+        margin: 5px;
+        /* Alinha o checkbox à direita, após o data-label */
+        float: right; 
+        width: auto; /* Remove a largura de 100% que inputs podem herdar */
+    }
+
+    /* Ajuste para a célula de Pontos (para manter alinhamento central) */
+    #daily-progress .points {
+        font-weight: bold;
+        color: #d9534f;
+        text-align: right;
+    }
+
+
+    /* Botão de lixo alinhado */
+    .remove {
+        padding: 0.5rem 1.5rem;
+    }
+}
